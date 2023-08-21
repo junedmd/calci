@@ -17,7 +17,7 @@
             <div class="c"> </div>
        
       </div>
-<input type="text" class="text-calci">
+<input type="text" id="input" class="text-calci">
    
 <div class="first">
   <div class="text-btn1"> SHIFT</div>
@@ -42,8 +42,8 @@
     <button class="btn2">(-)</button>
     <button class="btn2">ins </button>
     <button class="btn2">x^2 </button>
-    <button class="btn2">pol </button>
-    <button class="btn2">a/b</button>
+    <button class="btn2" >pol </button>
+    <button class="btn2" onclick="batandabye('a/b')" >a/b</button>
     <button class="btn2"> nPr</button>
   </div>
 
@@ -58,41 +58,58 @@
     </div>
     
     <div class="forth-row" >
-      <button class="btn4">1</button>
-      <button class="btn4"> 2</button>
-      <button class="btn4">3</button>
-      <button class="btn4">DEL</button>
-      <button class="btn4">AC</button>
+      <button class="btn4" onclick="batandabye('1')" >1</button>
+      <button class="btn4" onclick="batandabye('2')" > 2</button>
+      <button class="btn4" onclick="batandabye('3')" >3</button>
+      <button class="btn4" onclick="batandabye('clear')" >DEL</button>
+      <button class="btn4" onclick="batandabye('clear')" >AC</button>
       
       
       </div>
       <div class="forth-row">
-        <button class="btn4">4</button>
-      <button class="btn4"> 5</button>
-      <button class="btn4">6</button>
-      <button class="btn4">X</button>
-      <button class="btn4">/</button>
+        <button class="btn4" onclick="batandabye('4')" >4</button>
+      <button class="btn4" onclick="batandabye('5')" > 5</button>
+      <button class="btn4" onclick="batandabye('6')" >6</button>
+      <button class="btn4" onclick="batandabye('*')" >X</button>
+      <button class="btn4" onclick="batandabye('/')" >/</button>
       </div>
     
       <div class="forth-row">
-        <button class="btn4">7</button>
-      <button class="btn4"> 8</button>
-      <button class="btn4">9</button>
-      <button class="btn4">+</button>
-      <button class="btn4">-</button>
+        <button class="btn4" onclick="batandabye('7')" >7</button>
+      <button class="btn4" onclick="batandabye('8')" > 8</button>
+      <button class="btn4" onclick="batandabye('9')" >9</button>
+      <button class="btn4" onclick="batandabye('+')" >+</button>
+      <button class="btn4" onclick="batandabye('-')" >-</button>
       </div>
       <div class="forth-row">
-        <button class="btn4">0</button>
-      <button class="btn4"> .</button>
-      <button class="btn4">%</button>
-      <button class="btn4">EXP</button>
-      <button class="btn4">=</button>
+        <button class="btn4" onclick="batandabye('0')" >0</button>
+      <button class="btn4" onclick="batandabye('.')" > .</button>
+      <button class="btn4" onclick="batandabye('%')" >%</button>
+      <button class="btn4"  >EXP</button>
+      <button class="btn4" onclick="batandabye('=')" >=</button>
       </div>
-
-
 
 
     </div>
+    <script>
+      function batandabye(key)
+      {
+        const  inputscreen = document.getElementById ('input')
+       if(key=='=')
+       {
+        inputscreen.value = eval(inputscreen.value);
+       }
+       else if (key == 'clear')
+       {
+        inputscreen.value = '';
+       }
+       else
+       {
+        inputscreen.value += key;
+       }
+      }
+
+    </script>
 
 </body>
 </html>
